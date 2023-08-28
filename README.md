@@ -14,13 +14,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+# My Awesome GSIV Movie App
+
+Welcome to **GSIV Movie app**! This is a React-based web application that allows users to explore and search for movies using The Movie Database (TMDb) API.
+
 # My Awesome Movie App
 
-Welcome to **My Awesome Movie App**! This is a React-based web application that allows users to explore and search for movies using The Movie Database (TMDb) API.
-
-# My Awesome Movie App
-
-Welcome to **My Awesome Movie App**! This is a React-based web application that allows users to explore and search for movies using The Movie Database (TMDb) API.
+Welcome to **My Awesome GSIV Movie App**! This is a React-based web application that allows users to explore and search for movies using The Movie Database (TMDb) API.
 
 ## Table of Contents
 
