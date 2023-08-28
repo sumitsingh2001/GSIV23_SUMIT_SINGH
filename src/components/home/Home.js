@@ -100,8 +100,8 @@ const Home = () => {
             <div className="cards-container">
               {apiState.data && apiState.data.length > 0 ? (
                 apiState.data.map((movie) => (
-                  <Link to={`${App_Routes.DETAILS}/${movie.id}`} key={movie.id}>
-                    <div className="each-card">
+                  <div className="each-card">
+                    <Link to={`${App_Routes.DETAILS}/${movie.id}`} key={movie.id}>
                       <div className="movie-img-container">
                         <img src={`${IMG_PATH}${movie.backdrop_path}`} alt={movie.title} />
                       </div>
@@ -114,8 +114,8 @@ const Home = () => {
                       <p className='desc'>
                         {movie.overview.length > 120 ? `${movie.overview.substring(0, 80)}...` : movie.overview}
                       </p>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 ))
               ) : (
                 <div>No movies found</div>

@@ -18,6 +18,19 @@
   outline: none;
 }
 
+@media(max-width: 768px) {
+  .search-bar input {
+    width: 400px;
+  }
+}
+
+@media(max-width: 552px) {
+  .search-bar input {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .home-container {
   height: 100%;
   padding: 30px 36px;
@@ -50,7 +63,6 @@
 
 .each-card {
   height: 250px;
-  max-height: 250px;
   border-radius: 8px;
   border: 1px solid #c2c2c2;
   box-shadow: 1px 2px 4px #c2c2c2;
@@ -62,6 +74,26 @@
 .each-card:hover {
   background-color: #c2c2c26b;
   transform: translateY(-6px);
+}
+
+@media(max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .each-card {
+    height: fit-content;
+  }
+}
+
+@media(max-width: 552px) {
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .each-card {
+    height: 300px;
+  }
 }
 
 .movie-img-container {
