@@ -33,8 +33,11 @@
 
 .home-container {
   height: 100%;
-  padding: 30px 36px;
   position: relative;
+}
+
+.wrapper {
+  padding: 30px 36px;
 }
 
 .current_page {

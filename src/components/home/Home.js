@@ -67,15 +67,6 @@ const Home = () => {
 
   return (
     <>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search Your Movies..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
-
       <div className="home-container">
         {apiState.loading ? (
           <Loader />
@@ -83,43 +74,54 @@ const Home = () => {
           <div>Error: {apiState.error}</div>
         ) : (
           <>
-            <div className='current_page'>You're on page no {currentPageState.currentPage}</div>
-            <div className='pagination'>
-              <div className='buttons' title='scroll-right'>
-                {paginationArray.map((el, id) => (
-                  <button
-                    className={`p-btn ${el === currentPageState ? 'active' : ''}`}
-                    key={id}
-                    onClick={() => handlePageChange(el)}
-                  >
-                    {el}
-                  </button>
-                ))}
-              </div>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search Your Movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-            <div className="cards-container">
-              {apiState.data && apiState.data.length > 0 ? (
-                apiState.data.map((movie) => (
-                  <div className="each-card">
-                    <Link to={`${App_Routes.DETAILS}/${movie.id}`} key={movie.id}>
-                      <div className="movie-img-container">
-                        <img src={`${IMG_PATH}${movie.backdrop_path}`} alt={movie.title} />
-                      </div>
-                      <div className="movie-head">
-                        <div className='head'>{movie.title}</div>
-                        <div className={`rating ${getRatingColor(movie.vote_average)}`}>
-                          {movie.vote_average}
+
+            <div className="wrapper">
+              <div className='current_page'>You're on page no {currentPageState.currentPage}</div>
+              <div className='pagination'>
+                <div className='buttons' title='scroll-right'>
+                  {paginationArray.map((el, id) => (
+                    <button
+                      className={`p-btn ${el === currentPageState ? 'active' : ''}`}
+                      key={id}
+                      onClick={() => handlePageChange(el)}
+                    >
+                      {el}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="cards-container">
+                {apiState.data && apiState.data.length > 0 ? (
+                  apiState.data.map((movie) => (
+                    <div className="each-card">
+                      <Link to={`${App_Routes.DETAILS}/${movie.id}`} key={movie.id}>
+                        <div className="movie-img-container">
+                          <img src={`${IMG_PATH}${movie.backdrop_path}`} alt={movie.title} />
                         </div>
-                      </div>
-                      <p className='desc'>
-                        {movie.overview.length > 120 ? `${movie.overview.substring(0, 80)}...` : movie.overview}
-                      </p>
-                    </Link>
-                  </div>
-                ))
-              ) : (
-                <div>No movies found</div>
-              )}
+                        <div className="movie-head">
+                          <div className='head'>{movie.title}</div>
+                          <div className={`rating ${getRatingColor(movie.vote_average)}`}>
+                            {movie.vote_average}
+                          </div>
+                        </div>
+                        <p className='desc'>
+                          {movie.overview.length > 120 ? `${movie.overview.substring(0, 80)}...` : movie.overview}
+                        </p>
+                      </Link>
+                    </div>
+                  ))
+                ) : (
+                  <div>No movies found</div>
+                )}
+              </div>
             </div>
           </>
         )}
