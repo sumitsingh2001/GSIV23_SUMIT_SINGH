@@ -4,6 +4,13 @@ export const toggle = () => {
   };
 };
 
+export const setCurrentPage = (count) => {
+  return {
+    type: 'CURRENT_PAGE',
+    payload: count,
+  };
+};
+
 export const success = (data) => {
   return {
     type: 'SUCCESS',
