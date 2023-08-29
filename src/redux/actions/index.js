@@ -20,7 +20,7 @@ export const success = (data) => {
 
 export const failure = (message) => {
   return {
-    type: 'SUCCESS',
+    type: 'ERROR',
     payload: message,
   };
 };
